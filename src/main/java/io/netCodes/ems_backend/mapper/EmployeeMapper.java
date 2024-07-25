@@ -14,11 +14,20 @@ public class EmployeeMapper {
     }
 
     public static Employee mapToEmployee(EmployeeDto employeeDto) {
-        return new Employee(
-                employeeDto.getId(),
-                employeeDto.getFirstName(),
-                employeeDto.getLastName(),
-                employeeDto.getEmail()
-        );
+        Employee employee = new Employee();
+        employee.setFirstName(employeeDto.getFirstName());
+        employee.setLastName(employeeDto.getLastName());
+        employee.setEmail(employeeDto.getEmail());
+        return employee;
+    }
+
+    public static Employee mapToEmployeeWithId(EmployeeDto employeeDto) {
+        // This method can be used when the ID is needed, e.g., for updates
+        Employee employee = new Employee();
+        employee.setId(employeeDto.getId());
+        employee.setFirstName(employeeDto.getFirstName());
+        employee.setLastName(employeeDto.getLastName());
+        employee.setEmail(employeeDto.getEmail());
+        return employee;
     }
 }

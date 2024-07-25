@@ -14,4 +14,6 @@ public interface EmployeeService {
 
     EmployeeDto updateEmployee(Long employeeId, EmployeeDto updateEmployeeDto);
 
+    void deleteEmployee(Long employeeId);
+
 }
